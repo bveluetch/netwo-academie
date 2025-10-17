@@ -1,1 +1,1 @@
-# cadastre-schwytz
+# Netwo Académie
