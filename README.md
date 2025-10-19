@@ -65,16 +65,20 @@ The `src/pages` directory includes dedicated routes for each persona (`/operator
 
 ## Netwo design system integration
 
-Global theming is applied by importing the official design system stylesheet into `src/styles/globals.css`. The file
-`src/styles/netwo-design-system.css` is a vendored copy of the latest Storybook build from
-[designsystem.netwo.io](https://designsystem.netwo.io/). If Netwo publishes an updated bundle:
+Global theming is applied by importing shared Netwo tokens inside `src/styles/globals.css`. The
+`src/styles/netwo-design-system.css` file now contains a curated set of the CSS variables that power the brand colours,
+shadows, and typography used across the layouts. This keeps the repo lightweight while still mapping to the official
+[designsystem.netwo.io](https://designsystem.netwo.io/) foundations.
 
-1. Download the new CSS artifact from the design system site.
-2. Replace the contents of `src/styles/netwo-design-system.css` with the refreshed file.
-3. Restart the Next.js dev server to pick up the new tokens and global styles.
+When the design system evolves:
 
-The layout and component styling rely on the CSS variables exposed by the design system to stay visually consistent with
-the rest of the Netwo product suite.
+1. Cross-reference the latest tokens published in the design system documentation or Storybook theme inspector.
+2. Update the relevant CSS variable values in `src/styles/netwo-design-system.css` (add new variables if you adopt new
+   primitives).
+3. Restart the Next.js dev server to ensure updated tokens are pulled into the application shell.
+
+The rest of the UI still consumes these CSS variables so page layouts stay visually aligned with the wider Netwo
+product suite without requiring the full Tailwind/PostCSS toolchain during local development.
 
 ## Updating personas and video content
 
