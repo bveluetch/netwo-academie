@@ -17,6 +17,28 @@ npm install
 This will install Next.js, React, TypeScript tooling, ESLint, and download the Netwo design system stylesheet vendored in
 `src/styles/netwo-design-system.css`.
 
+### Tester le projet après l'installation
+
+Sur macOS (et sur d'autres systèmes), les vérifications suivantes permettent de s'assurer que tout fonctionne après
+`npm install` :
+
+```bash
+# Lancer le serveur de développement
+npm run dev
+
+# Vérifier les règles lint
+npm run lint
+
+# Vérifier les types TypeScript
+npm run type-check
+
+# Optionnel : simuler le build de production
+npm run build
+```
+
+Arrêtez le serveur de développement avec `Ctrl + C` une fois vos tests effectués. Les scripts fonctionnent avec Node.js 18+
+et npm 9+ installés via [Homebrew](https://brew.sh/) ou l'installeur officiel.
+
 ### Development workflow
 
 - `npm run dev` – start the development server on [http://localhost:3000](http://localhost:3000)
